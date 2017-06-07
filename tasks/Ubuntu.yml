@@ -7,7 +7,7 @@
 - include_vars: "{{ ansible_distribution }}{{ansible_distribution_major_version}}.yml"
   when: ansible_distribution_major_version == "16"
 
-- include: "{{ ansible_distribution }}{{ansible_distribution_major_version}}.yml"
+- include_vars: "{{ ansible_distribution }}{{ansible_distribution_major_version}}.yml"
   when: ansible_distribution_major_version == "16"
 
 #sudo add-apt-repository ppa:fkrull/deadsnakes-python2.7
