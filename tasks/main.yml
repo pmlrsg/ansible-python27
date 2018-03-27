@@ -54,3 +54,6 @@
   changed_when: pip_latest_output.stdout.find('Requirement already up-to-date') == -1
   when: pip_version == None or pip_version == "LATEST"
   tags: pip
+
+- pip: 
+    name: redis
