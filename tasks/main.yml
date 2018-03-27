@@ -15,6 +15,13 @@
 - fail: msg="{{ python }} should be installed"
   when: python_is_installed.rc != 0
 
+## Remove default installed python setuptools (very old version)
+- name: Remove old version of setuptools
+  package: name={{ item }} state=absent
+  with_items: 
+  - python-setuptools
+  - python-setuptools-devel
+
 ## Install setuptools
 
 - name: Download the setup script for Setuptools
